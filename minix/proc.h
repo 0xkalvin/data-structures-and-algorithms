@@ -41,6 +41,11 @@ struct proc {
   pid_t p_pid;			/* process id passed in from MM */
   int p_priority;		/* task, server, or user process */
 
+  int proc_priority;    /*  Prioridade do processo, usada para posicioná-lo 
+                            na fila de processos prontos para executar (ready) 
+                            OBS: quanto menor o proc_priority, mais prioridade 
+                        */
+
   clock_t user_time;		/* user time in ticks */
   clock_t sys_time;		/* sys time in ticks */
   clock_t child_utime;		/* cumulative user time of children */
