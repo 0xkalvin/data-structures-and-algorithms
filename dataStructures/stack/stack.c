@@ -56,12 +56,12 @@ int getTop(Stack* s){
 
 void printStack(Stack* s){
 
-    Stack* temp = s;
+    Stack temp = *s;
 
     printf("[ ");
-    while(!isEmpty(temp)){
-        printf("%d, ", getTop(temp));
-        pop(temp);
+    while(!isEmpty(&temp)){
+        printf("%d, ", getTop(&temp));
+        pop(&temp);
     }
     printf("]\n");
 }

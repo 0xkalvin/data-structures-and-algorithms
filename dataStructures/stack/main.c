@@ -10,13 +10,12 @@ int main(void){
 
     printStack(myStack);
 
-    //printf("%d \n", myStack->length);
-
     pop(myStack);
+    
+    printStack(myStack);
 
-    printf("Top is %d ", getTop(myStack));
+    printf("Top is %d \n", getTop(myStack));
 
-    //printStack(myStack);
 
     return 0;
 }
