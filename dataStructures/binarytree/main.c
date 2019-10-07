@@ -25,6 +25,10 @@ int main(void){
     printf("\nPOST ORDER\n");
     printPostOrder(myTree->root);
 
+    printf("\n There is %d nodes on the tree\n", count(myTree->root));
+
+    printf("\n Height is %d \n", getHeight(myTree->root));
+
 
     return 0;
 }

@@ -21,6 +21,8 @@ void insert(Tree* t, int data);
 void printInOrder(Node* root);
 void printPostOrder(Node* root);
 void printPreOrder(Node* root);
+int count(Node *root);
+int getHeight(Node *root);
 
 
 #endif
