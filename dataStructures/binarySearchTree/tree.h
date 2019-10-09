@@ -23,6 +23,9 @@ void printPostOrder(Node* root);
 void printPreOrder(Node* root);
 int count(Node *root);
 int getHeight(Node *root);
+int countLeafs(Node* root);
+int max(Node* root);
+int min(Node* root);
 
 
 #endif

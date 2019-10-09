@@ -3,7 +3,7 @@
 /*  
                     10
             1           12
-                5           15
+        0       5           15
 */
 
 int main(void){
@@ -15,20 +15,26 @@ int main(void){
     insert(myTree, 1);
     insert(myTree, 15);
     insert(myTree, 5);
+    insert(myTree, 0);
 
-    printf("\nIN ORDER\n");
+    printf("\n IN ORDER\n");
     printInOrder(myTree->root);
     
-    printf("\nPRE ORDER\n");
+    printf("\n\n PRE ORDER\n");
     printPreOrder(myTree->root);
 
-    printf("\nPOST ORDER\n");
+    printf("\n\n POST ORDER\n");
     printPostOrder(myTree->root);
 
-    printf("\n There is %d nodes on the tree\n", count(myTree->root));
+    printf("\n\n There is %d nodes on the tree\n", count(myTree->root));
 
     printf("\n Height is %d \n", getHeight(myTree->root));
 
+    printf("\n There is %d leafs on the tree\n", countLeafs(myTree->root));
+
+    printf("\n Max node is %d \n", max(myTree->root));
+
+    printf("\n Min node is %d \n", min(myTree->root));
 
     return 0;
 }

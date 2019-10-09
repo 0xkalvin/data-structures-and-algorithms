@@ -116,3 +116,33 @@ void insertAux(Node *root, int data)
             insertAux(root->right, data);
     }
 }
+
+
+int countLeafs(Node* root){
+
+    if(root == NULL)    return 0;
+    else{
+        if(root->left == NULL && root->right == NULL)   return 1;
+        else{
+            return countLeafs(root->left) + countLeafs(root->right);
+        }
+    }
+}
+
+int max(Node* root){
+
+    if(root == NULL)    return -1;
+
+    while(root->right != NULL)  root = root->right;
+
+    return root->data;
+}
+
+int min(Node* root){
+
+    if(root == NULL)    return -1;
+
+    while(root->left != NULL)  root = root->left;
+
+    return root->data;
+}
