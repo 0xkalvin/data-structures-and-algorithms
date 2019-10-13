@@ -1,10 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-#include "../linkedlist/linkedlist.h"
-
 typedef struct HashTableNode {
-    List* list;
+    struct HashTableNode* next;
     char* key;
     int data;
 }   HashTableNode;
@@ -16,10 +17,11 @@ typedef struct HashTable {
 } HashTable;
 
 
+HashTableNode* createHashTableNode(char* key, int data);
 HashTable* createHashTable(int capacity);
-void store(char* key, int data, int size);
-void fetch(char* key, int size);
-int hash(char* key, int size);
+void store(HashTable* ht, char* key, int data, int size);
+int fetch(HashTable* ht, char* key, int size);
+int hash(HashTable* ht, char* key, int size);
 
 
 #endif

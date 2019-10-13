@@ -3,7 +3,7 @@
 
 
 all:
-	cc	main.c	-o	output.o
+	cc	*.c	-o	output.o
 
 
 run:
