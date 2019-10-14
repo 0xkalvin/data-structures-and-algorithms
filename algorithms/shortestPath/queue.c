@@ -52,6 +52,12 @@ void dequeue(Queue * q)
     if (!isEmpty(q))
     {   
         Node* temp = q->head;
+
+        if(q->head->next == NULL){
+            q->head = NULL;
+            return;
+        }
+
         while (temp->next->next != NULL)
         {
             temp = temp->next;
