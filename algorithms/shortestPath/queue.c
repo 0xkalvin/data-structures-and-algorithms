@@ -11,6 +11,7 @@ Node *createNode(int r, int c, int d)
     newNode->row = r;
     newNode->column = c;
     newNode->distance = d;
+    newNode->next = NULL;
 
     return newNode;
 }
@@ -24,8 +25,6 @@ Queue *createQueue()
         return NULL;
 
     newQueue->head = NULL;
-
-    printf("AAAAAAAA");
 
     return newQueue;
 }
