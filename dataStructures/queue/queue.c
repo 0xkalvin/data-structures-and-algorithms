@@ -26,26 +26,36 @@ Queue* createQueue(){
     return q;
 }
 
+int isEmpty(Queue* q){
+    return q->head == NULL;
+}
+
 void enqueue(Queue* q, int data){
     
-    Node* temp = createNode(data);
 
-    if(q->head == NULL) {
+    if(isEmpty(q)) {
 
-        q->head = temp;
+        q->head = createNode(data);
         return;
     }
 
-    while(q->head->next != NULL)
-        q->head = q->head->next;
+    Node* temp = q->head;
 
-    q->head->next = temp;
+    while(temp->next != NULL)
+        temp= temp->next;
+
+    temp->next = createNode(data);
     
 }
 
 void dequeue(Queue* q){
 
-    if(q->head == NULL) return;
+    if(isEmpty(q)) return;
+
+    if(q->head->next == NULL){
+        q->head = NULL;
+        return;
+    }
 
     Node* temp = q->head;
     q->head = q->head->next;
@@ -56,8 +66,12 @@ void printQueue(Queue* q){
 
     Node* temp = q->head;
 
-    printf("front <- rear \n [ ");
+    if(temp == NULL)   {
+        printf("Queue is empty! \n");
+        return;
+    }
 
+    printf("[ ");
     while(temp->next != NULL){
         printf("%d, ", temp->data);
         temp = temp->next;

@@ -19,6 +19,7 @@ Node* createNode(int data);
 Queue* createQueue();
 void enqueue(Queue* q, int data);
 void dequeue(Queue* q);
+int isEmpty(Queue* q);
 void printQueue(Queue* q);
 
 

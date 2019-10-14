@@ -4,12 +4,12 @@ int main(void){
 
     Queue* myQueue = createQueue();
 
-
-    for(int i = 0; i < 10; i++) enqueue(myQueue, i);
-
+    for(int i = 0; i < 5; i++) enqueue(myQueue, i);
 
     printQueue(myQueue);
 
+    dequeue(myQueue);
+    dequeue(myQueue);
     dequeue(myQueue);
 
     printQueue(myQueue);
