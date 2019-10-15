@@ -7,7 +7,7 @@
 
 
 int shortestDistance(char grid[4][4], int m, int n)
-{
+{   
 
     Node* source = createNode(0, 0, 0);
     bool visited[m][n];
@@ -58,7 +58,7 @@ int shortestDistance(char grid[4][4], int m, int n)
         }
 
         // MOVING DOWN
-        if(current->row + 1 >= 0 && visited[current->row + 1][current->column] == false){
+        if(current->row + 1 < m  && visited[current->row + 1][current->column] == false){
             
             enqueue(q, createNode(current->row + 1, current->column, current->distance + 1));
             
@@ -75,7 +75,7 @@ int shortestDistance(char grid[4][4], int m, int n)
 
 
         // MOVING RIGHT
-        if(current->column + 1 >= 0 && visited[current->row][current->column + 1] == false){
+        if(current->column + 1 < n && visited[current->row][current->column + 1] == false){
             
             enqueue(q, createNode(current->row, current->column + 1, current->distance + 1));
             
@@ -89,8 +89,8 @@ int shortestDistance(char grid[4][4], int m, int n)
 int main(void)
 {   
     char grid[4][4] = {
-        {'0', '1', '0', 'S'},
-        {'1', '0', '1', '1'},
+        {'0', '1', '0', '0'},
+        {'1', '0', '1', 'S'},
         {'0', '1', '1', '1'},
         {'D', '1', '1', '1'}
     };
