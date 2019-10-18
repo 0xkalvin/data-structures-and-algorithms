@@ -54,6 +54,38 @@ void insertAtFirst(List *l, int data)
     }
 }
 
+void insertSorted(List* l, int data){
+
+    Node* newNode = createNode(data);
+    
+    if(l->head == NULL){
+        l->head = newNode;
+    }
+    else{
+        Node* temp = l->head;
+
+        if(l->head->data > data){
+            newNode->next = l->head;
+            l->head = newNode;
+            return;
+        }
+
+        while(temp->next != NULL && temp->next->data < data ){
+            temp = temp->next;
+        }
+        
+        if(temp->next == NULL){
+            temp->next = newNode;
+        }
+        else{
+            Node* temp2 = temp->next;
+            temp->next = newNode;
+            newNode->next = temp2;
+        }
+    }
+}
+
+
 void removeLast(List *l)
 {
     if(l->head != NULL){

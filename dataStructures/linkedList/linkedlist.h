@@ -18,6 +18,7 @@ List* createList();
 Node* createNode(int data);
 void insertAtLast(List* l, int data);
 void insertAtFirst(List* l, int data);
+void insertSorted(List* l, int data);
 void removeLast(List* l);
 void removeFirst(List* l);
 void printList(List* l);
