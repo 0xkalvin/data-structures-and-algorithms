@@ -60,12 +60,12 @@ int smallestCommon(int arr1[], int arr2[], int size1, int size2){
 }
 
 
-int onlyOneSwap(int v[10]){
+int onlyOneSwap(int arr[10]){
 
 
     int temp[10];
     for(int i = 0; i < 9; i++){
-        temp[i] = v[i];
+        temp[i] = arr[i];
     }
 
     mergeSort(temp, 0, 9);
@@ -73,11 +73,11 @@ int onlyOneSwap(int v[10]){
     int c = 0;
     for(int i = 0; i < 9; i++){
 
-        if(v[i] > v[i + 1]){
+        if(arr[i] != temp[i]){
             c++;
         }
 
     }
-    return c;
+    return c == 2 || c == 0;
 }
 
