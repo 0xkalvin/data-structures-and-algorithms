@@ -128,3 +128,19 @@ void printList(List *l)
 
     printf("%d ]\n", temp->data);
 }
+
+
+List* invert(List *l){
+
+    List* tempList = createList();
+
+    Node* temp = l->head;
+
+    while(temp != NULL){
+        insertAtFirst(tempList, temp->data);
+        temp = temp->next;
+    }
+
+    return tempList;
+
+}

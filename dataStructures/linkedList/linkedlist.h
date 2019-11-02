@@ -22,5 +22,6 @@ void insertSorted(List* l, int data);
 void removeLast(List* l);
 void removeFirst(List* l);
 void printList(List* l);
+List* invert(List* l);
 
 #endif

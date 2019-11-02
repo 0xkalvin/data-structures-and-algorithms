@@ -23,5 +23,11 @@ int main(void){
 
     printList(myList);
 
+    printf("Inverting...\n");
+    
+    myList = invert(myList);
+
+    printList(myList);
+
     return 0;
 }
