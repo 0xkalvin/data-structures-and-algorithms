@@ -23,5 +23,6 @@ void removeLast(List* l);
 void removeFirst(List* l);
 void printList(List* l);
 List* invert(List* l);
+void invertHardWay(List *l);
 
 #endif

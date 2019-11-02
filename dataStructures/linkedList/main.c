@@ -29,5 +29,9 @@ int main(void){
 
     printList(myList);
 
+    invertHardWay(myList);
+
+    printList(myList);
+
     return 0;
 }

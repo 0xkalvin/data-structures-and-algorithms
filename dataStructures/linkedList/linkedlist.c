@@ -144,3 +144,21 @@ List* invert(List *l){
     return tempList;
 
 }
+
+void invertHardWay(List *l){
+
+    Node* current = l->head;
+    Node* prev = NULL;
+    Node* following = NULL;
+
+    while(current != NULL){
+
+        following = current->next;
+        current->next = prev;
+        
+        prev = current;
+        current = following;
+    }
+
+    l->head = prev;
+}
