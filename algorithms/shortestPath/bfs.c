@@ -2,10 +2,8 @@
 
 #include "queue.h"
 
-// const int m = 4;
-// const int n = 4;
 
-
+/*  Find the shortest distance using breadth-first search    */
 int shortestDistance(char grid[4][4], int m, int n)
 {   
 
@@ -90,8 +88,8 @@ int main(void)
 {   
     char grid[4][4] = {
         {'0', '1', '0', '0'},
-        {'1', '0', '1', 'S'},
-        {'0', '1', '1', '1'},
+        {'1', '1', '1', 'S'},
+        {'1', '1', '1', '1'},
         {'D', '1', '1', '1'}
     };
 
