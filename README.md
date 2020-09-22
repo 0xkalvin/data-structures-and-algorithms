@@ -1,3 +1,3 @@
-# Bebop
+# Data structure and algorithms
 
-This is my code collection for studying data structures and algorithms.  
+A code collection of data structures and algorithms implementations in C, Golang and Clojure.
