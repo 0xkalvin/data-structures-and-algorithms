@@ -189,6 +189,23 @@ class BinarySearchTree {
 
     return false;
   }
+
+  mirror() {
+    return this._mirror(this.root);
+  }
+
+  _mirror(node) {
+    if (node === null) {
+      return;
+    }
+    let left = this._mirror(node.left);
+    let right = this._mirror(node.right);
+
+    node.left = right;
+    node.right = left;
+
+    return node;
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -228,3 +245,6 @@ console.log(tree.getMin());
 console.log("HAS PATH SUM");
 console.log(tree.hasPathSum(45));
 console.log(tree.hasPathSum(15));
+
+console.log("MIRROR");
+console.log(tree.mirror());
