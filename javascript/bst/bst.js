@@ -148,6 +148,47 @@ class BinarySearchTree {
 
     return this._getMax(node.right);
   }
+
+  hasPathSum(targetSum) {
+    return this._hasPathSum(this.root, targetSum);
+  }
+
+  _hasPathSum(node, targetSum) {
+    if (node === null) {
+      return false;
+    }
+
+    const nodeStack = [];
+    const sumStack = [];
+
+    nodeStack.push(node);
+    sumStack.push(targetSum - node.val);
+
+    while (nodeStack.length > 0) {
+      const currentNode = nodeStack.pop();
+      const currentSum = sumStack.pop();
+
+      if (
+        currentNode.left === null &&
+        currentNode.right === null &&
+        currentSum === 0
+      ) {
+        return true;
+      }
+
+      if (currentNode.left) {
+        nodeStack.push(currentNode.left);
+        sumStack.push(currentSum - currentNode.left.val);
+      }
+
+      if (currentNode.right) {
+        nodeStack.push(currentNode.right);
+        sumStack.push(currentSum - currentNode.right.val);
+      }
+    }
+
+    return false;
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -158,15 +199,13 @@ tree.insert(5);
 tree.insert(15);
 tree.insert(1);
 tree.insert(25);
-tree.insert(2);
 tree.insert(35);
 /*
             10
-        5       20
-      1   2    15    25
-                        35
+        5         20
+    1           15    25
+                          35
 */
-
 console.log(tree.search(20));
 console.log(tree.search(30));
 
@@ -185,3 +224,7 @@ console.log("MAX");
 console.log(tree.getMax());
 console.log("MIN");
 console.log(tree.getMin());
+
+console.log("HAS PATH SUM");
+console.log(tree.hasPathSum(45));
+console.log(tree.hasPathSum(15));
